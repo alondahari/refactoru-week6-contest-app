@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1 Submit your video!
+	.row
+		.col-xs-8.col-xs-offset-2
+			form
+				.form-group
+					input.form-control(name='name', type='text', placeholder='Name')
+				.form-group
+					input.form-control(name='url', type='text', placeholder='Url to Youtube video')
+				.form-group
+					input.form-control(name='title', type='text', placeholder='Video Title')
+				.form-group
+					label(for='video-desc') Description
+					textarea#video-desc.form-control(name='desc')
+
+				button.btn.btn-primary(type='submit') Submit
