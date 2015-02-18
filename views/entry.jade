@@ -4,7 +4,7 @@ block content
 	h1 Submit your video!
 	.row
 		.col-xs-8.col-xs-offset-2
-			form
+			form(method='post', action='/formsubmit')
 				.form-group
 					input.form-control(name='name', type='text', placeholder='Name')
 				.form-group

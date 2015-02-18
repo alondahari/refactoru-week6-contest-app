@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1 Current Submissions
+	.row
+		.col-xs-10.col-xs-offset-1
+			each submission in submissions
+				ul.list-group
+					h4 #{submission.name}`s video
+					li.list-group-item Url on youtube: #{submission.url}
+					li.list-group-item Title: #{submission.title}
+					li.list-group-item Description: #{submission.desc}
