@@ -2,12 +2,15 @@ extends layout
 
 block content
 	h1 Current Submissions
-	.row
-		each submission, index in submissions
-			.col-xs-6(class=(!(index%2)) ? 'clear-left' : '')
-				ul.list-group
-					h4 #{submission.name}`s video
-					li.list-group-item.youtube-video
-						iframe(src=submission.embedUrl, frameborder="0", allowfullscreen)
-					li.list-group-item Title: #{submission.title}
-					li.list-group-item Description: #{submission.desc}
+	form.row(method='post', action='/submit-vote')
+			each submission, index in submissions
+				.col-xs-6(class=(!(index%2)) ? 'clear-left' : '')
+					ul.list-group
+						label(for="video-#{index}")
+							h4 #{submission.name}`s video
+						input(id="video-#{index}", type="radio", name="pair-#{Math.floor(index/2)}", value="#{index}")
+						li.list-group-item.youtube-video
+							iframe(src=submission.embedUrl, frameborder="0", allowfullscreen)
+						li.list-group-item Title: #{submission.title}
+						li.list-group-item Description: #{submission.desc}
+			button.btn.btn-primary.center-block.submit-button Submit votes
