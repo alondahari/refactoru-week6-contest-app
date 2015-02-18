@@ -1,4 +1,5 @@
 var js = require('jsonfile');
+var _ = require('underscore');
 
 var indexController = {
 	index: function(req, res) {
@@ -11,7 +12,9 @@ var indexController = {
 	},
 	showSubmissions: function(req, res) {
 		var submissions = indexController.getsubmissions(function(err, data){
-			res.render('submissions', {submissions: data});
+			res.render('submissions', {
+				submissions: data
+			});
 		});
 	},
 	submit: function(req, res){
