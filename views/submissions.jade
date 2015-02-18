@@ -7,6 +7,8 @@ block content
 			each submission in submissions
 				ul.list-group
 					h4 #{submission.name}`s video
-					li.list-group-item Url on youtube: #{submission.url}
+					li.list-group-item
+						//- a(href=submission.url)= submission.url
+						iframe(width="560", height="315", src=submission.embedUrl, frameborder="0", allowfullscreen)
 					li.list-group-item Title: #{submission.title}
 					li.list-group-item Description: #{submission.desc}

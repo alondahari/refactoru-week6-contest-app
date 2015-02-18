@@ -13,8 +13,15 @@ var indexController = {
 		});
 	},
 	submit: function(req, res){
-		indexController.addSubmission(req.body);
+		var body = indexController.addEmbed(req.body);
+		indexController.addSubmission(body);
 		res.redirect('/');
+	},
+	addEmbed: function(body){
+		var url = body.url;
+		url = url.replace(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g, 'www.youtube.com/embed/$1');
+		body.embedUrl = url.replace(/&/g, '?');
+		return body;
 	},
 	addSubmission: function(submission){
 		var file = 'models/submissions.js';
