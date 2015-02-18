@@ -13,8 +13,20 @@ var indexController = {
 	},
 
 	showSubmissions: function(req, res) {
-		var submissions = indexController.getsubmissions(function(err, data){
+		indexController.getsubmissions(function(err, data){
 			res.render('submissions', {
+				submissions: data
+			});
+		});
+	},
+
+	leaders: function(req, res){
+		indexController.getsubmissions(function(err, data){
+			data = _.sortBy(data, function(obj){
+				return obj.votes	
+			}).reverse()
+			
+			res.render('leaders', {
 				submissions: data
 			});
 		});

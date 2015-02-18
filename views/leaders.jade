@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 Leader Board
+	ul.list-group
+		each submission, index in submissions
+			.col-xs-12
+				h4 #{index + 1}. #{submission.name}`s video
+				li.list-group-item.youtube-video
+					iframe(src=submission.embedUrl, frameborder="0", allowfullscreen)
+				li.list-group-item Votes: #{submission.votes}
+				li.list-group-item Title: #{submission.title}
+				li.list-group-item Description: #{submission.desc}

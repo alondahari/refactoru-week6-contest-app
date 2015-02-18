@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', indexController.index);
 app.get('/entry-form', indexController.entry);
 app.get('/show-submissions', indexController.showSubmissions);
+app.get('/leader-board', indexController.leaders);
 app.post('/formsubmit', indexController.submitVideo);
 app.post('/submit-vote', indexController.submitVote);
 
