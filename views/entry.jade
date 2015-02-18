@@ -1,21 +1,26 @@
 extends layout
 
 block content
-	h1 Submit your video!
-	.row
-		.col-xs-8.col-xs-offset-2
-			form(method='post', action='/formsubmit')
-				.form-group
-					label(for="youtubeUrl") Name:
-					input.form-control(name='name', type='text', placeholder='Name')
-				.form-group
-					label(for="youtubeUrl") Url:
-					input#youtubeUrl.form-control(name='url', type='text', value="www.youtube.com/") 
-				.form-group
-					label(for="youtubeUrl") Title:
-					input.form-control(name='title', type='text', placeholder='Video Title')
-				.form-group
-					label(for='video-desc') Description:
-					textarea#video-desc.form-control(name='desc', placeholder="Video's description")
+	if full
+		h1 Sorry, the contest is full!
+		a(href='/') Go Back
 
-				button.btn.btn-primary(type='submit') Submit
+	else
+		h1 Submit your video!
+		.row
+			.col-xs-8.col-xs-offset-2
+				form(method='post', action='/formsubmit')
+					.form-group
+						label(for="youtubeUrl") Name:
+						input.form-control(name='name', type='text', placeholder='Name')
+					.form-group
+						label(for="youtubeUrl") Url:
+						input#youtubeUrl.form-control(name='url', type='text', value="www.youtube.com/") 
+					.form-group
+						label(for="youtubeUrl") Title:
+						input.form-control(name='title', type='text', placeholder='Video Title')
+					.form-group
+						label(for='video-desc') Description:
+						textarea#video-desc.form-control(name='desc', placeholder="Video's description")
+
+					button.btn.btn-primary(type='submit') Submit

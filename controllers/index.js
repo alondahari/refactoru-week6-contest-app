@@ -5,10 +5,12 @@ var indexController = {
 		res.render('index');
 	},
 	entry: function(req, res) {
-		res.render('entry');
+		indexController.getsubmissions(function(err,data){
+			res.render('entry', {full: (data.length > 7)});
+		});
 	},
 	showSubmissions: function(req, res) {
-		var submissions = js.readFile('models/submissions.js', function(err, data){
+		var submissions = indexController.getsubmissions(function(err, data){
 			res.render('submissions', {submissions: data});
 		});
 	},
@@ -24,13 +26,15 @@ var indexController = {
 		return body;
 	},
 	addSubmission: function(submission){
-		var file = 'models/submissions.js';
-		js.readFile(file, function(err, data){
+		indexController.getsubmissions(function(err, data){
 			if (!err) {
 				data.push(submission);
-				js.writeFile(file, data);
-			};
+				js.writeFile('models/submissions.js', data);
+			}
 		});
+	},
+	getsubmissions: function(callback){
+		return js.readFile('models/submissions.js', callback);
 	}
 
 };
