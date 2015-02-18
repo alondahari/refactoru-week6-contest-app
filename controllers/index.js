@@ -37,8 +37,7 @@ var indexController = {
 		indexController.getsubmissions(function(err, data){
 			_.each(data, function(submission, i){
 				if (_.contains(votes, i)) {
-					console.log(data);
-					data.votes++;
+					data[i].votes++;
 				}
 			});
 			js.writeFile('models/submissions.js', data);

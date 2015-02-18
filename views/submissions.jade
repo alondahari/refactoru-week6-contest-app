@@ -2,15 +2,20 @@ extends layout
 
 block content
 	h1 Current Submissions
+	p Click on a video's header to vote for it!
 	form.row(method='post', action='/submit-vote')
 			each submission, index in submissions
-				.col-xs-6(class=(!(index%2)) ? 'clear-left' : '')
+				.col-xs-5(class=(!(index%2)) ? 'clear-left' : '')
 					ul.list-group
-						label(for="video-#{index}")
+						input.hide(id="video-#{index}", type="radio", name="pair-#{Math.floor(index/2)}", value="#{index}")
+						label(for="video-#{index}").radio-label
 							h4 #{submission.name}`s video
-						input(id="video-#{index}", type="radio", name="pair-#{Math.floor(index/2)}", value="#{index}")
-						li.list-group-item.youtube-video
-							iframe(src=submission.embedUrl, frameborder="0", allowfullscreen)
-						li.list-group-item Title: #{submission.title}
-						li.list-group-item Description: #{submission.desc}
+							li.list-group-item.youtube-video
+								iframe(src=submission.embedUrl, frameborder="0", allowfullscreen)
+							li.list-group-item Title: #{submission.title}
+							li.list-group-item Description: #{submission.desc}
+				if !(index%2)
+					.col-xs-1.vs
+						h3 VS.
+
 			button.btn.btn-primary.center-block.submit-button Submit votes

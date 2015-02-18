@@ -19,3 +19,11 @@
 .submit-button{
 	clear: both;
 }
+
+.vs{
+	margin-top: 150px;
+}
+
+input[type="radio"]:checked + label h4{
+	text-shadow: 0 0 5px rgba(166,52,200,0.6);
+}

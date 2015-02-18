@@ -1,6 +1,6 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var indexController = require('./controllers/index.js');
+var express = require('express')
+var bodyParser = require('body-parser')
+var indexController = require('./controllers/index.js')
 
 var app = express();
 app.set('view engine', 'jade');

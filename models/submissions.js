@@ -5,7 +5,7 @@
     "title": "JavaScript Video",
     "desc": "In this 2007 presentation at Yahoo!, which is meant to be the beginning of a three-course sequence (followed by \"Theory of the DOM\" and then \"Advanced JavaScript\"), Douglas Crockford explores not only the language as it is today but also how the language came to be the way it is.",
     "embedUrl": "https://www.youtube.com/embed/v2ifWcnQs6M?list=PL5586336C26BDB324?index=2",
-    "votes": 0
+    "votes": 1
   },
   {
     "name": "Second entry",
@@ -13,7 +13,7 @@
     "title": "Regina Spektor - \"Laughing With\"",
     "desc": "Regina's new album 'What We Saw from the Cheap Seats' is available now",
     "embedUrl": "https://www.youtube.com/embed/-pxRXP3w-sQ",
-    "votes": 0
+    "votes": 1
   },
   {
     "name": "Yogi",
@@ -21,7 +21,7 @@
     "title": "Jillian Michaels: Yoga Meltdown Level 1",
     "desc": "Jillian Michaels: Yoga Meltdown Level 1 is designed to sculpt muscle, burn fat, and tone your entire body fast! Begin with a gentle vinyasa, then kick up the intensity with a series of yoga poses combined with Jillian's signature exercises that focus on flow and form to build core strength and enhance results. ",
     "embedUrl": "https://www.youtube.com/embed/q5nyrD4eM64",
-    "votes": 0
+    "votes": 1
   },
   {
     "name": "Kevin Spacey",
